@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <div class="card shadow mx-auto" style="max-width: 400px; background-color: #FFE4E1;">
+        <div class="card-body">
+            <h2 class="card-title text-danger fw-bold">{{ pokemon.name }}</h2>
+            <img src="{{ pokemon.sprites }}" alt="{{ pokemon.name }}" class="img-fluid my-3" style="max-width: 200px;">
+            <p><strong>ID:</strong> {{ pokemon.id }}</p>
+            <p><strong>Altura:</strong> {{ pokemon.height }} dm</p>
+            <p><strong>Peso:</strong> {{ pokemon.weight }} hg</p>
+            <p><strong>Tipos:</strong> {{ ', '.join(pokemon.types) }}</p>
+            <p><strong>Habilidades:</strong> {{ ', '.join(pokemon.abilities) }}</p>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Volver</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
